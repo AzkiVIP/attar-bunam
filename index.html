@@ -60,12 +60,12 @@
 
     <script>
         document.getElementById("startBtn").addEventListener("click", () => {
-            setTimeout(() => {
-                document.getElementById("jumpscare").style.display = "flex";
+            document.getElementById("startBtn").style.display = "none";
+            document.getElementById("jumpscare").style.display = "flex";
 
-                const audio = document.getElementById("scream");
-                audio.play().catch(() => {});
-            }, 3000);
+            const audio = document.getElementById("scream");
+            audio.currentTime = 0;
+            audio.play().catch(err => console.error(err));
         });
     </script>
 
